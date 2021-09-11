@@ -1,0 +1,18 @@
+server:
+  port: 9300
+spring:
+  application:
+    name: services-movies
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:moviesBD;
+    driver-class-name: org.h2.Driver
+    platform: h2
+    data-username: sa
+    data-password:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
