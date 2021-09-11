@@ -1,11 +1,13 @@
 package co.com.poli.showtimes.entities;
 
+import co.com.poli.showtimes.model.Movie;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -23,6 +25,9 @@ public class ShowTime {
     private Date date;
 
     private ArrayList<Long> movies = new ArrayList<Long>();
+
+    @Transient
+    private List<Movie> moviesInfo;;
 
     @Override
     public boolean equals(Object o) {
