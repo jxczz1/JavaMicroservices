@@ -29,6 +29,17 @@ public class ShowTimeServiceImpl implements ShowTimeService {
 
     @Override
     public List<ShowTime> findAll() {
+        List<ShowTime> showTimeList = showTimeRepository.findAll();
+        List<ShowTime> showTimeListResponse =  showTimeList.stream().map( showTime -> {
+       ModelMapper modelMapper = new ModelMapper();
+       List<Movie> moviesList = showTime.getMovies().stream()
+               .map(movieId -> {
+                   Movie movie = modelMapper.map(movieClient.findById(movieId).getData(), Movie.class);
+                   return movie;
+               }).collect(Collectors.toList());
+       showTime.setMoviesInfo(moviesList);
+       return showTime;
+   }).collect(Collectors.toList());
         return showTimeRepository.findAll();
     }
 
