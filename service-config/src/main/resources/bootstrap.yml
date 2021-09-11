@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///c/Users/elpru/OneDrive/Documentos/config-data
+          uri: file:///C:\Users\elpru\OneDrive\Documentos\config-data
 
   security:
     user:
