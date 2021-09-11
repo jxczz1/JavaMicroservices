@@ -5,4 +5,5 @@ include 'services-users'
 include 'services-movies'
 include 'services-showtimes'
 include 'service-config'
+include 'services-eureka'
 

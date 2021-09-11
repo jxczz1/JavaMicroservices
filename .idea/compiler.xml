@@ -11,6 +11,7 @@
         <module name="TrabajoFinalMicros.services-movies.main" />
         <module name="TrabajoFinalMicros.services-bookings.main" />
         <module name="TrabajoFinalMicros.services-users.main" />
+        <module name="TrabajoFinalMicros.services-eureka.main" />
         <module name="TrabajoFinalMicros.services-showtimes.main" />
       </profile>
     </annotationProcessing>
