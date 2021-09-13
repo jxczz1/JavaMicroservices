@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name = "services-showtimes")
-@RequestMapping(value="/showtimes")
+@FeignClient(name = "services-showtimes", fallback =ShowTimeClientFallBackHystrix.class )
 public interface ShowTimeClient {
-    @GetMapping("/{id}")
+    @GetMapping("/showtimes/{id}")
     public Response findById(@PathVariable("id") Long id);
 }
