@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name = "services-movies")
-@RequestMapping(value="/movies")
+@FeignClient(name = "services-movies",fallback = MovieClientFallBackHytrix.class)
 public interface MovieClient {
-    @GetMapping("/{id}")
-    public Response findById(@PathVariable("id") Long id);
+    @GetMapping("/movies/{id}")
+    Response findById(@PathVariable("id") Long id);
 }
