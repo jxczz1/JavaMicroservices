@@ -5,6 +5,7 @@ import co.com.poli.showtimes.entities.ShowTime;
 import co.com.poli.showtimes.model.Movie;
 import co.com.poli.showtimes.repositories.ShowTimeRepository;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

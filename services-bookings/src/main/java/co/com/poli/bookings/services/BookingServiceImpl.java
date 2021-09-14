@@ -57,6 +57,9 @@ public class BookingServiceImpl implements BookingService{
     @Override
     public Booking findById(long id) {
        Booking booking =  bookingRepository.findById(id).orElse(null);
+       if (booking == null){
+           return null;
+       }
         ModelMapper modelMapper = new ModelMapper();
         List<Movie> moviesList = booking.getMovies().stream()
                 .map( movieId -> {
